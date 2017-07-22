@@ -3,7 +3,7 @@
      <div class="newTask">
        <input type="text" v-model="newTodo" name="" @keyup.enter="add">
      </div>
-     <ol class="todos">
+     <ol class="todos" v-cloak>
         <li v-for="item in todoList">
           <input type="checkbox" v-model="item.done">{{item.title}}
           <span v-if="item.done">已完成</span>
@@ -51,5 +51,7 @@ export default {
 </script>
 
 <style scoped>
-
+[v-cloak] {
+  display: none;
+}
 </style>
